@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/KnjizaraServisHost" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/KnjizaraServisHost.Klase" />
+  <xs:element name="Prijava">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PrijavaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/KnjizaraServisHost" minOccurs="0" name="PrijavaResult" nillable="true" type="q1:Korisnik" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SveKnjige">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SveKnjigeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/KnjizaraServisHost.Klase" minOccurs="0" name="SveKnjigeResult" nillable="true" type="q2:ArrayOfKnjiga" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PorudzbineKorisnika">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id_korisnika" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PorudzbineKorisnikaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/KnjizaraServisHost.Klase" minOccurs="0" name="PorudzbineKorisnikaResult" nillable="true" type="q3:ArrayOfPorudzbine" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PoruciKnjigu">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/KnjizaraServisHost.Klase" minOccurs="0" name="p" nillable="true" type="q4:Porudzbine" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PoruciKnjiguResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OtkaziPorudzbinu">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id_por" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OtkaziPorudzbinuResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="OtkaziPorudzbinuResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnesiKnjigu">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/KnjizaraServisHost.Klase" minOccurs="0" name="k" nillable="true" type="q5:Knjiga" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnesiKnjiguResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnesiKorisnika">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/KnjizaraServisHost" minOccurs="0" name="k" nillable="true" type="q6:Korisnik" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnesiKorisnikaResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IzmeniKnjigu">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id_knjige" type="xs:int" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/KnjizaraServisHost.Klase" minOccurs="0" name="k" nillable="true" type="q7:Knjiga" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IzmeniKnjiguResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IzmeniKnjiguResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IzmeniKorisnika">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id_korisnika" type="xs:int" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/KnjizaraServisHost" minOccurs="0" name="k" nillable="true" type="q8:Korisnik" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IzmeniKorisnikaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IzmeniKorisnikaResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PregledPorudzbina">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PregledPorudzbinaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/KnjizaraServisHost.Klase" minOccurs="0" name="PregledPorudzbinaResult" nillable="true" type="q9:ArrayOfPorudzbine" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SviKorisnici">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SviKorisniciResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/KnjizaraServisHost" minOccurs="0" name="SviKorisniciResult" nillable="true" type="q10:ArrayOfKorisnik" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostaviPopust">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id_knjige" type="xs:int" />
+        <xs:element minOccurs="0" name="popust" type="xs:float" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostaviPopustResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PostaviPopustResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObrisiKnjigu">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id_knjige" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObrisiKnjiguResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObrisiKnjiguResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObrisiKorisnika">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id_korisnika" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObrisiKorisnikaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ObrisiKorisnikaResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

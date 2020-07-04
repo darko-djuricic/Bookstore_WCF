@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="d6201eef-96ef-469a-8e7c-d2177572ee45" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8000/knjizara/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="15409d07-394a-4527-879d-5b9b8dd03c4c" SourceId="1" SourceUrl="http://localhost:8000/knjizara/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="ff3c76e4-9fbd-4b74-a72b-5555ce8ebd01" SourceId="1" SourceUrl="http://localhost:8000/knjizara/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="8adb98d8-47b1-4d7f-9881-6000747bee8f" SourceId="1" SourceUrl="http://localhost:8000/knjizara/mex" />
+    <MetadataFile FileName="KnjizaraServisHost.xsd" MetadataType="Schema" ID="72e1c238-bad8-4a47-8ce5-134934f09e27" SourceId="1" SourceUrl="http://localhost:8000/knjizara/mex" />
+    <MetadataFile FileName="KnjizaraServisHost.Klase.xsd" MetadataType="Schema" ID="e336e159-696c-4d8d-ba0b-c4466bd73757" SourceId="1" SourceUrl="http://localhost:8000/knjizara/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

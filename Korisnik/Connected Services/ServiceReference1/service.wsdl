@@ -1,0 +1,551 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="KnjizaraServis" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetTcpBinding_IOperater_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="NetNamedPipeBinding_IAdmin_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <msf:WindowsTransportSecurity xmlns:msf="http://schemas.microsoft.com/ws/2006/05/framing/policy">
+                  <msf:ProtectionLevel>EncryptAndSign</msf:ProtectionLevel>
+                </msf:WindowsTransportSecurity>
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/KnjizaraServisHost" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/KnjizaraServisHost.Klase" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IKorisnik_Prijava_InputMessage">
+    <wsdl:part name="parameters" element="tns:Prijava" />
+  </wsdl:message>
+  <wsdl:message name="IKorisnik_Prijava_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PrijavaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKorisnik_SveKnjige_InputMessage">
+    <wsdl:part name="parameters" element="tns:SveKnjige" />
+  </wsdl:message>
+  <wsdl:message name="IKorisnik_SveKnjige_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SveKnjigeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKorisnik_PorudzbineKorisnika_InputMessage">
+    <wsdl:part name="parameters" element="tns:PorudzbineKorisnika" />
+  </wsdl:message>
+  <wsdl:message name="IKorisnik_PorudzbineKorisnika_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PorudzbineKorisnikaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKorisnik_PoruciKnjigu_InputMessage">
+    <wsdl:part name="parameters" element="tns:PoruciKnjigu" />
+  </wsdl:message>
+  <wsdl:message name="IKorisnik_PoruciKnjigu_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PoruciKnjiguResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOperater_UnesiKnjigu_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnesiKnjigu" />
+  </wsdl:message>
+  <wsdl:message name="IOperater_UnesiKnjigu_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnesiKnjiguResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOperater_UnesiKorisnika_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnesiKorisnika" />
+  </wsdl:message>
+  <wsdl:message name="IOperater_UnesiKorisnika_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnesiKorisnikaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOperater_IzmeniKnjigu_InputMessage">
+    <wsdl:part name="parameters" element="tns:IzmeniKnjigu" />
+  </wsdl:message>
+  <wsdl:message name="IOperater_IzmeniKnjigu_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IzmeniKnjiguResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOperater_IzmeniKorisnika_InputMessage">
+    <wsdl:part name="parameters" element="tns:IzmeniKorisnika" />
+  </wsdl:message>
+  <wsdl:message name="IOperater_IzmeniKorisnika_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IzmeniKorisnikaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOperater_PregledPorudzbina_InputMessage">
+    <wsdl:part name="parameters" element="tns:PregledPorudzbina" />
+  </wsdl:message>
+  <wsdl:message name="IOperater_PregledPorudzbina_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PregledPorudzbinaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOperater_SviKorisnici_InputMessage">
+    <wsdl:part name="parameters" element="tns:SviKorisnici" />
+  </wsdl:message>
+  <wsdl:message name="IOperater_SviKorisnici_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SviKorisniciResponse" />
+  </wsdl:message>
+  <wsdl:message name="IOperater_PostaviPopust_InputMessage">
+    <wsdl:part name="parameters" element="tns:PostaviPopust" />
+  </wsdl:message>
+  <wsdl:message name="IOperater_PostaviPopust_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PostaviPopustResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_ObrisiKnjigu_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObrisiKnjigu" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_ObrisiKnjigu_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObrisiKnjiguResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_ObrisiKorisnika_InputMessage">
+    <wsdl:part name="parameters" element="tns:ObrisiKorisnika" />
+  </wsdl:message>
+  <wsdl:message name="IAdmin_ObrisiKorisnika_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ObrisiKorisnikaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IKorisnik">
+    <wsdl:operation name="Prijava">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPrijava/Prijava" message="tns:IKorisnik_Prijava_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPrijava/PrijavaResponse" message="tns:IKorisnik_Prijava_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SveKnjige">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKorisnik/SveKnjige" message="tns:IKorisnik_SveKnjige_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKorisnik/SveKnjigeResponse" message="tns:IKorisnik_SveKnjige_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PorudzbineKorisnika">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKorisnik/PorudzbineKorisnika" message="tns:IKorisnik_PorudzbineKorisnika_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKorisnik/PorudzbineKorisnikaResponse" message="tns:IKorisnik_PorudzbineKorisnika_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PoruciKnjigu">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKorisnik/PoruciKnjigu" message="tns:IKorisnik_PoruciKnjigu_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKorisnik/PoruciKnjiguResponse" message="tns:IKorisnik_PoruciKnjigu_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IOperater">
+    <wsdl:operation name="Prijava">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPrijava/Prijava" message="tns:IKorisnik_Prijava_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPrijava/PrijavaResponse" message="tns:IKorisnik_Prijava_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SveKnjige">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKorisnik/SveKnjige" message="tns:IKorisnik_SveKnjige_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKorisnik/SveKnjigeResponse" message="tns:IKorisnik_SveKnjige_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PorudzbineKorisnika">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKorisnik/PorudzbineKorisnika" message="tns:IKorisnik_PorudzbineKorisnika_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKorisnik/PorudzbineKorisnikaResponse" message="tns:IKorisnik_PorudzbineKorisnika_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PoruciKnjigu">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKorisnik/PoruciKnjigu" message="tns:IKorisnik_PoruciKnjigu_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKorisnik/PoruciKnjiguResponse" message="tns:IKorisnik_PoruciKnjigu_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnesiKnjigu">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOperater/UnesiKnjigu" message="tns:IOperater_UnesiKnjigu_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOperater/UnesiKnjiguResponse" message="tns:IOperater_UnesiKnjigu_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnesiKorisnika">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOperater/UnesiKorisnika" message="tns:IOperater_UnesiKorisnika_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOperater/UnesiKorisnikaResponse" message="tns:IOperater_UnesiKorisnika_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IzmeniKnjigu">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOperater/IzmeniKnjigu" message="tns:IOperater_IzmeniKnjigu_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOperater/IzmeniKnjiguResponse" message="tns:IOperater_IzmeniKnjigu_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IzmeniKorisnika">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOperater/IzmeniKorisnika" message="tns:IOperater_IzmeniKorisnika_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOperater/IzmeniKorisnikaResponse" message="tns:IOperater_IzmeniKorisnika_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PregledPorudzbina">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOperater/PregledPorudzbina" message="tns:IOperater_PregledPorudzbina_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOperater/PregledPorudzbinaResponse" message="tns:IOperater_PregledPorudzbina_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SviKorisnici">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOperater/SviKorisnici" message="tns:IOperater_SviKorisnici_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOperater/SviKorisniciResponse" message="tns:IOperater_SviKorisnici_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PostaviPopust">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOperater/PostaviPopust" message="tns:IOperater_PostaviPopust_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOperater/PostaviPopustResponse" message="tns:IOperater_PostaviPopust_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IAdmin">
+    <wsdl:operation name="Prijava">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPrijava/Prijava" message="tns:IKorisnik_Prijava_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPrijava/PrijavaResponse" message="tns:IKorisnik_Prijava_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SveKnjige">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKorisnik/SveKnjige" message="tns:IKorisnik_SveKnjige_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKorisnik/SveKnjigeResponse" message="tns:IKorisnik_SveKnjige_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PorudzbineKorisnika">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKorisnik/PorudzbineKorisnika" message="tns:IKorisnik_PorudzbineKorisnika_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKorisnik/PorudzbineKorisnikaResponse" message="tns:IKorisnik_PorudzbineKorisnika_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PoruciKnjigu">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKorisnik/PoruciKnjigu" message="tns:IKorisnik_PoruciKnjigu_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKorisnik/PoruciKnjiguResponse" message="tns:IKorisnik_PoruciKnjigu_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnesiKnjigu">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOperater/UnesiKnjigu" message="tns:IOperater_UnesiKnjigu_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOperater/UnesiKnjiguResponse" message="tns:IOperater_UnesiKnjigu_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnesiKorisnika">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOperater/UnesiKorisnika" message="tns:IOperater_UnesiKorisnika_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOperater/UnesiKorisnikaResponse" message="tns:IOperater_UnesiKorisnika_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IzmeniKnjigu">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOperater/IzmeniKnjigu" message="tns:IOperater_IzmeniKnjigu_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOperater/IzmeniKnjiguResponse" message="tns:IOperater_IzmeniKnjigu_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IzmeniKorisnika">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOperater/IzmeniKorisnika" message="tns:IOperater_IzmeniKorisnika_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOperater/IzmeniKorisnikaResponse" message="tns:IOperater_IzmeniKorisnika_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PregledPorudzbina">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOperater/PregledPorudzbina" message="tns:IOperater_PregledPorudzbina_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOperater/PregledPorudzbinaResponse" message="tns:IOperater_PregledPorudzbina_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SviKorisnici">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOperater/SviKorisnici" message="tns:IOperater_SviKorisnici_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOperater/SviKorisniciResponse" message="tns:IOperater_SviKorisnici_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PostaviPopust">
+      <wsdl:input wsaw:Action="http://tempuri.org/IOperater/PostaviPopust" message="tns:IOperater_PostaviPopust_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IOperater/PostaviPopustResponse" message="tns:IOperater_PostaviPopust_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObrisiKnjigu">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdmin/ObrisiKnjigu" message="tns:IAdmin_ObrisiKnjigu_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdmin/ObrisiKnjiguResponse" message="tns:IAdmin_ObrisiKnjigu_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ObrisiKorisnika">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdmin/ObrisiKorisnika" message="tns:IAdmin_ObrisiKorisnika_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdmin/ObrisiKorisnikaResponse" message="tns:IAdmin_ObrisiKorisnika_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IKorisnik" type="tns:IKorisnik">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Prijava">
+      <soap:operation soapAction="http://tempuri.org/IPrijava/Prijava" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SveKnjige">
+      <soap:operation soapAction="http://tempuri.org/IKorisnik/SveKnjige" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PorudzbineKorisnika">
+      <soap:operation soapAction="http://tempuri.org/IKorisnik/PorudzbineKorisnika" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PoruciKnjigu">
+      <soap:operation soapAction="http://tempuri.org/IKorisnik/PoruciKnjigu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetTcpBinding_IOperater" type="tns:IOperater">
+    <wsp:PolicyReference URI="#NetTcpBinding_IOperater_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="Prijava">
+      <soap12:operation soapAction="http://tempuri.org/IPrijava/Prijava" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SveKnjige">
+      <soap12:operation soapAction="http://tempuri.org/IKorisnik/SveKnjige" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PorudzbineKorisnika">
+      <soap12:operation soapAction="http://tempuri.org/IKorisnik/PorudzbineKorisnika" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PoruciKnjigu">
+      <soap12:operation soapAction="http://tempuri.org/IKorisnik/PoruciKnjigu" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnesiKnjigu">
+      <soap12:operation soapAction="http://tempuri.org/IOperater/UnesiKnjigu" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnesiKorisnika">
+      <soap12:operation soapAction="http://tempuri.org/IOperater/UnesiKorisnika" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IzmeniKnjigu">
+      <soap12:operation soapAction="http://tempuri.org/IOperater/IzmeniKnjigu" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IzmeniKorisnika">
+      <soap12:operation soapAction="http://tempuri.org/IOperater/IzmeniKorisnika" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PregledPorudzbina">
+      <soap12:operation soapAction="http://tempuri.org/IOperater/PregledPorudzbina" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SviKorisnici">
+      <soap12:operation soapAction="http://tempuri.org/IOperater/SviKorisnici" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostaviPopust">
+      <soap12:operation soapAction="http://tempuri.org/IOperater/PostaviPopust" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NetNamedPipeBinding_IAdmin" type="tns:IAdmin">
+    <wsp:PolicyReference URI="#NetNamedPipeBinding_IAdmin_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/named-pipe" />
+    <wsdl:operation name="Prijava">
+      <soap12:operation soapAction="http://tempuri.org/IPrijava/Prijava" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SveKnjige">
+      <soap12:operation soapAction="http://tempuri.org/IKorisnik/SveKnjige" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PorudzbineKorisnika">
+      <soap12:operation soapAction="http://tempuri.org/IKorisnik/PorudzbineKorisnika" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PoruciKnjigu">
+      <soap12:operation soapAction="http://tempuri.org/IKorisnik/PoruciKnjigu" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnesiKnjigu">
+      <soap12:operation soapAction="http://tempuri.org/IOperater/UnesiKnjigu" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnesiKorisnika">
+      <soap12:operation soapAction="http://tempuri.org/IOperater/UnesiKorisnika" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IzmeniKnjigu">
+      <soap12:operation soapAction="http://tempuri.org/IOperater/IzmeniKnjigu" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IzmeniKorisnika">
+      <soap12:operation soapAction="http://tempuri.org/IOperater/IzmeniKorisnika" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PregledPorudzbina">
+      <soap12:operation soapAction="http://tempuri.org/IOperater/PregledPorudzbina" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SviKorisnici">
+      <soap12:operation soapAction="http://tempuri.org/IOperater/SviKorisnici" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostaviPopust">
+      <soap12:operation soapAction="http://tempuri.org/IOperater/PostaviPopust" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObrisiKnjigu">
+      <soap12:operation soapAction="http://tempuri.org/IAdmin/ObrisiKnjigu" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ObrisiKorisnika">
+      <soap12:operation soapAction="http://tempuri.org/IAdmin/ObrisiKorisnika" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="KnjizaraServis">
+    <wsdl:port name="BasicHttpBinding_IKorisnik" binding="tns:BasicHttpBinding_IKorisnik">
+      <soap:address location="http://localhost:8000/knjizara/korisnik" />
+    </wsdl:port>
+    <wsdl:port name="NetTcpBinding_IOperater" binding="tns:NetTcpBinding_IOperater">
+      <soap12:address location="net.tcp://localhost/knjizara/operater" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://localhost/knjizara/operater</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>DESKTOP-P0JAI0T\djuri</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="NetNamedPipeBinding_IAdmin" binding="tns:NetNamedPipeBinding_IAdmin">
+      <soap12:address location="net.pipe://localhost/knjizara/admin" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.pipe://localhost/knjizara/admin</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Upn>DESKTOP-P0JAI0T\djuri</Upn>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

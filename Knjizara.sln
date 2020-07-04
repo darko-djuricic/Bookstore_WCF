@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KnjizaraServisHost", "KnjizaraServisHost\KnjizaraServisHost.csproj", "{EE41A970-906F-466F-88CB-F9FE76F1BAB6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Operater", "Operater\Operater.csproj", "{F13432A6-E9E7-4E35-A315-4C75CF7292F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Admin", "Admin\Admin.csproj", "{35416DC5-DC75-4B10-B556-B8114103AD27}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KorisnikApp", "KorisnikApp\KorisnikApp.csproj", "{73629F0F-472D-4F59-820F-756F91CA59D0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D49A462F-06BE-4C10-B065-C227DFCB1A06}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\Downloads\bootstrap-minty.css = ..\..\..\Downloads\bootstrap-minty.css
+		index.html = index.html
+		korisnik.html = korisnik.html
+		korisnik.js = korisnik.js
+		prijava.js = prijava.js
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EE41A970-906F-466F-88CB-F9FE76F1BAB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE41A970-906F-466F-88CB-F9FE76F1BAB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE41A970-906F-466F-88CB-F9FE76F1BAB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE41A970-906F-466F-88CB-F9FE76F1BAB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F13432A6-E9E7-4E35-A315-4C75CF7292F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F13432A6-E9E7-4E35-A315-4C75CF7292F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F13432A6-E9E7-4E35-A315-4C75CF7292F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F13432A6-E9E7-4E35-A315-4C75CF7292F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35416DC5-DC75-4B10-B556-B8114103AD27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35416DC5-DC75-4B10-B556-B8114103AD27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35416DC5-DC75-4B10-B556-B8114103AD27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35416DC5-DC75-4B10-B556-B8114103AD27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73629F0F-472D-4F59-820F-756F91CA59D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73629F0F-472D-4F59-820F-756F91CA59D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73629F0F-472D-4F59-820F-756F91CA59D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73629F0F-472D-4F59-820F-756F91CA59D0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D982D14A-46D9-4BAF-A081-485E2477C4D2}
+	EndGlobalSection
+EndGlobal

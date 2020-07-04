@@ -1,0 +1,11 @@
+C:\Users\djuri\source\repos\Knjizara\KorisnikApp\bin\Debug\KorisnikApp.exe.config
+C:\Users\djuri\source\repos\Knjizara\KorisnikApp\bin\Debug\KorisnikApp.exe
+C:\Users\djuri\source\repos\Knjizara\KorisnikApp\bin\Debug\KorisnikApp.pdb
+C:\Users\djuri\source\repos\Knjizara\KorisnikApp\obj\Debug\KorisnikApp.csprojAssemblyReference.cache
+C:\Users\djuri\source\repos\Knjizara\KorisnikApp\obj\Debug\KorisnikApp.Form1.resources
+C:\Users\djuri\source\repos\Knjizara\KorisnikApp\obj\Debug\KorisnikApp.Form2.resources
+C:\Users\djuri\source\repos\Knjizara\KorisnikApp\obj\Debug\KorisnikApp.Properties.Resources.resources
+C:\Users\djuri\source\repos\Knjizara\KorisnikApp\obj\Debug\KorisnikApp.csproj.GenerateResource.cache
+C:\Users\djuri\source\repos\Knjizara\KorisnikApp\obj\Debug\KorisnikApp.csproj.CoreCompileInputs.cache
+C:\Users\djuri\source\repos\Knjizara\KorisnikApp\obj\Debug\KorisnikApp.exe
+C:\Users\djuri\source\repos\Knjizara\KorisnikApp\obj\Debug\KorisnikApp.pdb

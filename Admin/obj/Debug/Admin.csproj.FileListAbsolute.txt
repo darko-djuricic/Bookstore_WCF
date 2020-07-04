@@ -1,0 +1,11 @@
+C:\Users\djuri\source\repos\Knjizara\Admin\bin\Debug\Admin.exe.config
+C:\Users\djuri\source\repos\Knjizara\Admin\bin\Debug\Admin.exe
+C:\Users\djuri\source\repos\Knjizara\Admin\bin\Debug\Admin.pdb
+C:\Users\djuri\source\repos\Knjizara\Admin\obj\Debug\Admin.Form1.resources
+C:\Users\djuri\source\repos\Knjizara\Admin\obj\Debug\Admin.Properties.Resources.resources
+C:\Users\djuri\source\repos\Knjizara\Admin\obj\Debug\Admin.csproj.GenerateResource.cache
+C:\Users\djuri\source\repos\Knjizara\Admin\obj\Debug\Admin.csproj.CoreCompileInputs.cache
+C:\Users\djuri\source\repos\Knjizara\Admin\obj\Debug\Admin.exe
+C:\Users\djuri\source\repos\Knjizara\Admin\obj\Debug\Admin.pdb
+C:\Users\djuri\source\repos\Knjizara\Admin\obj\Debug\Admin.csprojAssemblyReference.cache
+C:\Users\djuri\source\repos\Knjizara\Admin\obj\Debug\Admin.Form2.resources

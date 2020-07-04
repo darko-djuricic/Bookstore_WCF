@@ -1,0 +1,7 @@
+C:\Users\djuri\source\repos\Knjizara\KnjizaraServisHost\bin\Debug\KnjizaraServisHost.exe.config
+C:\Users\djuri\source\repos\Knjizara\KnjizaraServisHost\bin\Debug\KnjizaraServisHost.exe
+C:\Users\djuri\source\repos\Knjizara\KnjizaraServisHost\bin\Debug\KnjizaraServisHost.pdb
+C:\Users\djuri\source\repos\Knjizara\KnjizaraServisHost\obj\Debug\KnjizaraServisHost.csprojAssemblyReference.cache
+C:\Users\djuri\source\repos\Knjizara\KnjizaraServisHost\obj\Debug\KnjizaraServisHost.csproj.CoreCompileInputs.cache
+C:\Users\djuri\source\repos\Knjizara\KnjizaraServisHost\obj\Debug\KnjizaraServisHost.exe
+C:\Users\djuri\source\repos\Knjizara\KnjizaraServisHost\obj\Debug\KnjizaraServisHost.pdb
